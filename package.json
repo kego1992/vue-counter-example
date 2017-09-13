@@ -1,0 +1,22 @@
+{
+  "name": "vue-counter-example",
+  "version": "1.0.0",
+  "description": "Simple counter app example with Vue2 using Single File Component.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pocka/vue-counter-example.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "pocka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pocka/vue-counter-example/issues"
+  },
+  "homepage": "https://github.com/pocka/vue-counter-example#readme"
+}
