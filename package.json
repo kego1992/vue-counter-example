@@ -1,40 +1,39 @@
 {
-  "name": "vue-counter-example",
+  "name": "vue-counter-app",
   "version": "1.0.0",
-  "description": "Simple counter app example with Vue2 using Single File Component.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --host 0.0.0.0",
+    "start": "webpack-dev-server --hot",
     "build": "webpack -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pocka/vue-counter-example.git"
-  },
-  "keywords": [
-    "vue"
-  ],
-  "author": "pocka",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pocka/vue-counter-example/issues"
-  },
-  "homepage": "https://github.com/pocka/vue-counter-example#readme",
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "vue-loader": "^13.0.4",
-    "webpack": "^3.5.6",
-    "css-loader": "^0.28.7",
-    "vue-template-compiler": "^2.4.2",
-    "webpack-dev-server": "^2.7.1"
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
-    "vue": "^2.4.2"
+    "vue": "^2.5.17"
+  },
+  "browserslist": "last 2 versions, not dead, not ie > 0",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }

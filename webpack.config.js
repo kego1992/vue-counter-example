@@ -1,37 +1,41 @@
+const path = require('path')
+
+const CopyPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: `${__dirname}/dest`,
-    },
-	module: {
-		rules: [
-		{
-			test: /\.vue$/,
-            loader: 'vue-loader',
-            options: {
-                postLoaders: {
-                    js: 'babel-loader?presets=es2015',
-                },
-            },
-        },
-        {
-            test: /\.js$/,
-            loader: 'babel-loader?presets=es2015',
-        },
-        {
-            test: /\.(css|sass|scss)$/,
-            loader: 'sass-loader',
-        },
-		],
-	},
-	resolve: {
-		extensions: ['.js', '.vue'],
-		alias: {
-			vue$: 'vue/dist/vue.esm.js',
-		},
-	},
-    devServer: {
-        contentBase: 'dest',
-    },
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, './dest'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.js', '.vue'],
+    alias: {
+      vue$: 'vue/dist/vue.esm.js'
+    }
+  },
+  plugins: [
+    new VueLoaderPlugin(),
+    new CopyPlugin([{from: './public' }])
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public')
+  }
 }
